@@ -6,14 +6,14 @@ GAME_EXE = $(GAME_PATH)/$(PROJECT)
 clean:
 	rm -rf $(BUILD_PATH)
 
+clean-game:
+	rm -rf $(GAME_PATH)
+
 build-game:
 	if ! [ -d $(BUILD_PATH) ]; then mkdir $(BUILD_PATH); fi
 	if [ -d $(GAME_PATH) ]; then rm -rf $(GAME_PATH); fi
 	mkdir $(GAME_PATH)
 	g++ -Wall src/*.cpp -o $(GAME_EXE)
-	
-clean-game:
-	rm -rf $(GAME_PATH)
 
 run-game:
 	if ! [ -f $(GAME_EXE) ]; then make build-game; fi
