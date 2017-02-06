@@ -7,6 +7,7 @@ class Item
 
         bool Consume();
         bool Consume(int amount);
+        bool Add();
         bool Add(int amount);
 
         void SetMaxStackSize(int size);

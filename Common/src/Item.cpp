@@ -33,6 +33,12 @@ bool Item::Consume(int amount)
 
     return true;
 }
+
+bool Item::Add()
+{
+    return Add(1);
+}
+
 bool Item::Add(int amount)
 {
     int newStackSize = GetCurrentStacks() + amount;
