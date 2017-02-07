@@ -13,16 +13,16 @@ class Item
 
         void SetMaxStackSize(int size);
         void SetCurrentStacks(int size);
-        void SetDimensions(int xDimension, int yDimension);
-        void SetID(int i);
-        void SetPosition(int xPos, int yPos);
+        void SetItemDimensions(int xDimension, int yDimension);
+        void SetItemID(int i);
+        void SetItemPosition(int * pos);
 
         int GetMaxStackSize() const;
         int GetCurrentStacks() const;
-        const int * GetDimensions() const;
-        int * GetDimensions();
-        int GetID() const;
-        const int * GetPosition() const;
+        const int * GetItemDimensions() const;
+        int * GetItemDimensions();
+        int GetItemID() const;
+        const int * GetItemPosition() const;
 
     private:
         int id;

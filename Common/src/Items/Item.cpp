@@ -7,18 +7,18 @@ Item::Item()
 
 Item::Item(int maxStacks, int * itemDimensions)
 {
-    SetID(UNIDENTIFIED_ITEM);
+    SetItemID(UNIDENTIFIED_ITEM);
     SetMaxStackSize(maxStacks);
     SetCurrentStacks(0);
-    SetDimensions(itemDimensions[0], itemDimensions[1]);
+    SetItemDimensions(itemDimensions[0], itemDimensions[1]);
 }
 
 Item::Item(int itemID, int maxStacks, int * itemDimensions)
 {
-    SetID(itemID);
+    SetItemID(itemID);
     SetMaxStackSize(maxStacks);
     SetCurrentStacks(0);
-    SetDimensions(itemDimensions[0], itemDimensions[1]);
+    SetItemDimensions(itemDimensions[0], itemDimensions[1]);
 }
 
 Item::~Item()
@@ -84,10 +84,9 @@ void Item::SetDimensions(int xDimension, int yDimension)
     dimensions[1] = yDimension;
 }
 
-void Item::SetPosition(int xPos, int yPos)
+void Item::SetItemPosition(int pos)
 {
-    position[0] = xPos;
-    position[1] = yPos;
+    position = pos;
 }
 
 int Item::GetMaxStackSize() const
@@ -100,22 +99,22 @@ int Item::GetCurrentStacks() const
     return stackSize;
 }
 
-const int * Item::GetDimensions() const
+const int * Item::GetItemDimensions() const
 {
     return dimensions;
 }
 
-int * Item::GetDimensions()
+int * Item::GetItemDimensions()
 {
     return dimensions;
 }
 
-int Item::GetID() const
+int Item::GetItemID() const
 {
     return id;
 }
 
-const int * Item::GetPosition() const
+const int * Item::GetItemPosition() const
 {
     return position;
 }

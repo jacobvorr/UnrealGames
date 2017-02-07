@@ -23,9 +23,9 @@ bool test_CreateItem()
     potion = Item(256, potionDimensions);
     std::cout << "Test: Max Stacks: " << potion.GetMaxStackSize() << " == 256" << std::endl;
     std::cout << "Test: Stacks: " << potion.GetCurrentStacks() << " == 0" << std::endl;
-    std::cout << "Test: Item Dimensions: " << potion.GetDimensions()[0] << ", "
-        << potion.GetDimensions()[1]  << " == " << potionDimensions[0] << ", " << potionDimensions[1] << std::endl;
-    std::cout << "Test: Item ID: " << potion.GetID() << " == 10000" << std::endl;
-    return (potion.GetMaxStackSize() == 256 && potion.GetCurrentStacks() == 0 && potion.GetID() == 10000 &&
-        potion.GetDimensions()[0] == potionDimensions[0] && potion.GetDimensions()[1] == potionDimensions[1]);
+    std::cout << "Test: Item Dimensions: " << potion.GetItemDimensions()[0] << ", "
+        << potion.GetItemDimensions()[1]  << " == " << potionDimensions[0] << ", " << potionDimensions[1] << std::endl;
+    std::cout << "Test: Item ID: " << potion.GetItemID() << " == 10000" << std::endl;
+    return (potion.GetMaxStackSize() == 256 && potion.GetCurrentStacks() == 0 && potion.GetItemID() == 10000 && 
+        potion.GetItemDimensions()[0] == potionDimensions[0] && potion.GetItemDimensions()[1] == potionDimensions[1]);
 }
