@@ -1,4 +1,5 @@
 #include "Item.hpp"
+#define UNIDENTIFIED_ITEM 10000
 
 Item::Item()
 {
@@ -6,6 +7,15 @@ Item::Item()
 
 Item::Item(int maxStacks, int * itemDimensions)
 {
+    SetItemID(UNIDENTIFIED_ITEM);
+    SetMaxStackSize(maxStacks);
+    SetCurrentStacks(0);
+    SetItemDimensions(itemDimensions[0], itemDimensions[1]);
+}
+
+Item::Item(int itemID, int maxStacks, int * itemDimensions)
+{
+    SetItemID(itemID);
     SetMaxStackSize(maxStacks);
     SetCurrentStacks(0);
     SetItemDimensions(itemDimensions[0], itemDimensions[1]);
@@ -63,10 +73,20 @@ void Item::SetCurrentStacks(int size)
     stackSize = size;
 }
 
-void Item::SetItemDimensions(int xDimension, int yDimension)
+void Item::SetID(int i)
 {
-    itemDimensions[0] = xDimension;
-    itemDimensions[1] = yDimension;
+    id = i;
+}
+
+void Item::SetDimensions(int xDimension, int yDimension)
+{
+    dimensions[0] = xDimension;
+    dimensions[1] = yDimension;
+}
+
+void Item::SetItemPosition(int pos)
+{
+    position = pos;
 }
 
 int Item::GetMaxStackSize() const
@@ -81,10 +101,20 @@ int Item::GetCurrentStacks() const
 
 const int * Item::GetItemDimensions() const
 {
-    return itemDimensions;
+    return dimensions;
 }
 
 int * Item::GetItemDimensions()
 {
-    return itemDimensions;
+    return dimensions;
+}
+
+int Item::GetItemID() const
+{
+    return id;
+}
+
+const int * Item::GetItemPosition() const
+{
+    return position;
 }

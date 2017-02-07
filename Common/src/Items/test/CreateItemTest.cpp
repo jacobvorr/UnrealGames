@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "../../Item.hpp"
+#include "../Item.hpp"
 
 bool test_CreateItem();
 
@@ -25,6 +25,7 @@ bool test_CreateItem()
     std::cout << "Test: Stacks: " << potion.GetCurrentStacks() << " == 0" << std::endl;
     std::cout << "Test: Item Dimensions: " << potion.GetItemDimensions()[0] << ", "
         << potion.GetItemDimensions()[1]  << " == " << potionDimensions[0] << ", " << potionDimensions[1] << std::endl;
-    return (potion.GetMaxStackSize() == 256 && potion.GetCurrentStacks() == 0 &&
+    std::cout << "Test: Item ID: " << potion.GetItemID() << " == 10000" << std::endl;
+    return (potion.GetMaxStackSize() == 256 && potion.GetCurrentStacks() == 0 && potion.GetItemID() == 10000 && 
         potion.GetItemDimensions()[0] == potionDimensions[0] && potion.GetItemDimensions()[1] == potionDimensions[1]);
 }
